@@ -1,3 +1,5 @@
+import HomePage from '../../page-objects/HomePage'
+
 describe('Demo test to start frameworks', function (){
     beforeEach(function (){
         cy.fixture('example').then(function (data){
@@ -6,18 +8,20 @@ describe('Demo test to start frameworks', function (){
     })
 
     it('should be able to submit the form', function () {
+        const homePage = new HomePage()
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
-        cy.contains('Name').next().type(this.data.name)
-        cy.get('#exampleFormControlSelect1').select(this.data.gender)
+        homePage.getName().type(this.data.name)
+        homePage.getGender().select(this.data.gender)
 
-        cy.contains('Two-way Data Binding example').children('input').should('have.value', this.data.name)
-        cy.contains('Name').next().should('have.attr', 'minlength', '2')
-        cy.get('#inlineRadio3').should('be.disabled')
+        homePage.get2WayDataBinding().should('have.value', this.data.name)
+        homePage.getName().should('have.attr', 'minlength', '2')
+        homePage.getEntrepreneur().should('be.disabled')
     })
 
     it('should be able to select a product', function () {
+        const homePage = new HomePage()
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
-        cy.contains('Shop').click()
+        homePage.getShop().click()
         this.data.productName.forEach(product => cy.selectProduct(product))
     })
 })
