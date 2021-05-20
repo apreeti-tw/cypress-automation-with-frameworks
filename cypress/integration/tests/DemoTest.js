@@ -1,5 +1,5 @@
 describe('Demo test to start frameworks', function (){
-    before(function (){
+    beforeEach(function (){
         cy.fixture('example').then(function (data){
             this.data = data
         })
@@ -18,7 +18,6 @@ describe('Demo test to start frameworks', function (){
     it('should be able to select a product', function () {
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         cy.contains('Shop').click()
-        cy.selectProduct('Blackberry')
-        cy.selectProduct('iphone')
+        this.data.productName.forEach(product => cy.selectProduct(product))
     })
 })
