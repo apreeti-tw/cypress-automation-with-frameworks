@@ -14,4 +14,11 @@ describe('Demo test to start frameworks', function (){
         cy.contains('Name').next().should('have.attr', 'minlength', '2')
         cy.get('#inlineRadio3').should('be.disabled')
     })
+
+    it('should be able to select a product', function () {
+        cy.visit('https://rahulshettyacademy.com/angularpractice/')
+        cy.contains('Shop').click()
+        cy.selectProduct('Blackberry')
+        cy.selectProduct('iphone')
+    })
 })
