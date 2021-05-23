@@ -34,7 +34,7 @@ Cypress.Commands.add('selectProduct', (productName) => {
 
 Cypress.Commands.add('selectFromList', (option) => {
     cy.get('div.suggestions').children().each(($el, index, $list) => {
-        if($el.text().includes(option)){
+        if($el.text().match(option)){
             cy.wrap($el).click()
         }
     })
