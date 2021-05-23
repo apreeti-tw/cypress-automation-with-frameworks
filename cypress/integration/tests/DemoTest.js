@@ -1,4 +1,4 @@
-import HomePage from '../../page-objects/HomePage'
+import HomePage from '../../support/page-objects/HomePage'
 
 describe('Demo test to start frameworks', function (){
     beforeEach(function (){

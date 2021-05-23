@@ -1,7 +1,7 @@
-import HomePage from '../../page-objects/HomePage'
-import ShoppingPage from '../../page-objects/ShoppingPage'
-import CartPage from "../../page-objects/CartPage";
-import CheckoutPage from "../../page-objects/CheckoutPage"
+import HomePage from '../../support/page-objects/HomePage'
+import ShoppingPage from '../../support/page-objects/ShoppingPage'
+import CartPage from "../../support/page-objects/CartPage";
+import CheckoutPage from "../../support/page-objects/CheckoutPage"
 
 describe('Place Order Test', function (){
     beforeEach(function (){
