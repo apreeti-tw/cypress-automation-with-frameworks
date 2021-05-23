@@ -31,3 +31,17 @@ Cypress.Commands.add('selectProduct', (productName) => {
         }
     })
 })
+
+Cypress.Commands.add('selectFromList', (option) => {
+    cy.get('div.suggestions').children().each(($el, index, $list) => {
+        if($el.text().includes(option)){
+            cy.wrap($el).click()
+        }
+    })
+})
+
+Cypress.Commands.add('successAlertContainsText', (text) => {
+    cy.get('.alert-success').then(element => {
+        expect(element.text().includes(text))
+    })
+})
