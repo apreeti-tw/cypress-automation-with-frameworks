@@ -4,5 +4,6 @@
   "env": {
     "angularpractice": "angularpractice/"
   },
-  "projectId": "vg2u6x"
+  "projectId": "vg2u6x",
+  "reporter": "mochawesome"
 }
