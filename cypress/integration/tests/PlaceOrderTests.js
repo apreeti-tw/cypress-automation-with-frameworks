@@ -16,7 +16,7 @@ describe('Place Order Test', function (){
         const cartPage = new CartPage()
         const checkoutPage = new CheckoutPage()
 
-        cy.visit('https://rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.config("baseUrl"))
         homePage.getShop().click()
         this.data.productName.forEach(product => cy.selectProduct(product))
         shoppingPage.getCheckout().click()
