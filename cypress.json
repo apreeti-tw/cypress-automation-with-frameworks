@@ -2,6 +2,7 @@
   "defaultCommandTimeout": 8000,
   "baseUrl": "https://rahulshettyacademy.com/",
   "env": {
-    "angularpractice" : "angularpractice/"
-  }
+    "angularpractice": "angularpractice/"
+  },
+  "projectId": "vg2u6x"
 }
