@@ -1,4 +1,7 @@
 {
   "defaultCommandTimeout": 8000,
-  "baseUrl": "https://rahulshettyacademy.com/angularpractice/"
+  "baseUrl": "https://rahulshettyacademy.com/",
+  "env": {
+    "angularpractice" : "angularpractice/"
+  }
 }
