@@ -20,6 +20,18 @@ describe('Place Order Test', function (){
         homePage.getShop().click()
         this.data.productName.forEach(product => cy.selectProduct(product))
         shoppingPage.getCheckout().click()
+        let sum = 0
+        let cartTotal
+
+        cartPage.getProductTotal().each(($el, index, $list) => {
+            sum = Number(sum) + Number($el.text().split(" ")[1].trim())
+        }).then(() => {
+            cartPage.getCartTotal().then(el => {
+                cartTotal = Number(el.text().split(" ")[1].trim())
+                expect(sum).to.eql(cartTotal)
+            })
+        })
+
         cartPage.getCheckout().click()
         checkoutPage.getCountry().type(this.data.country)
         cy.selectFromList(this.data.country)
