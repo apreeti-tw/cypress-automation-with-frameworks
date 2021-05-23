@@ -21,10 +21,10 @@ describe('Place Order Test', function (){
         this.data.productName.forEach(product => cy.selectProduct(product))
         shoppingPage.getCheckout().click()
         cartPage.getCheckout().click()
-        checkoutPage.getCountry().type('India')
-        cy.selectFromList('India')
+        checkoutPage.getCountry().type(this.data.country)
+        cy.selectFromList(this.data.country)
         checkoutPage.getTnC().click({force: true})
         checkoutPage.getPurchase().click()
-        cy.successAlertContainsText('Success! Thank you! Your order will be delivered in next few weeks :-). ')
+        cy.successAlertContainsText(this.data.successfulOrderMsg)
     });
 })

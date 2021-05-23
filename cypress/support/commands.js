@@ -42,6 +42,6 @@ Cypress.Commands.add('selectFromList', (option) => {
 
 Cypress.Commands.add('successAlertContainsText', (text) => {
     cy.get('.alert-success').then(element => {
-        expect(element.text().includes(text))
+        expect(element.text()).to.contain(text)
     })
 })

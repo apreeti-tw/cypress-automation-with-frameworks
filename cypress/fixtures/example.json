@@ -1,5 +1,8 @@
 {
+
   "name": "Bob",
   "gender": "Female",
-  "productName": ["Blackberry", "iphone"]
+  "productName": ["Blackberry", "iphone"],
+  "country": "India",
+  "successfulOrderMsg": "Success! Thank you! Your order will be delivered in next few weeks :-)."
 }
