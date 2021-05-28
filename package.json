@@ -4,7 +4,10 @@
   "description": "Cypress end-to-end test automation framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/cypress run",
+    "headed": "npm run test --headed",
+    "testChrome": "npm run test -b chrome",
+    "recordDashboard": "npm run test --record --key ade7c993-4247-4d32-9204-9e6a3ee404eb"
   },
   "keywords": [
     "Cypress",
