@@ -5,5 +5,8 @@
     "angularpractice": "angularpractice/"
   },
   "projectId": "vg2u6x",
-  "reporter": "mochawesome"
+  "reporter": "mochawesome",
+  "retries": {
+    "runMode": 2
+  }
 }
