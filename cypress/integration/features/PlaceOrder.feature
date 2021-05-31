@@ -4,7 +4,7 @@ Feature: Place Order
     Given User navigates to Home page
     When User selects to shop
     And Adds products to cart
-    And Select checkout
+    And Selects checkout
     And Enters country "India"
     And Accepts terms and conditions
     And Places the order
