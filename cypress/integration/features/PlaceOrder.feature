@@ -14,6 +14,8 @@ Feature: Place Order
   Scenario: User should be able to fill the form
     Given User navigates to Home page
     When User fills the form
-    Then Two way data binding must have same value as name
+    |name|gender|
+    |Bobby|Male|
+    Then Two way data binding must have value "Bobby"
     And Name should have minimum length of 2
     And Entrepreneurship should be disabled

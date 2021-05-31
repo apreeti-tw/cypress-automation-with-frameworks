@@ -43,13 +43,13 @@ Then('The order should be placed successfully', function () {
     cy.successAlertContainsText(this.data.successfulOrderMsg)
 })
 
-When('User fills the form', function () {
-    homePage.getName().type(this.data.name)
-    homePage.getGender().select(this.data.gender)
+When('User fills the form', function (dataTable) {
+    homePage.getName().type(dataTable.rawTable[1][0])
+    homePage.getGender().select(dataTable.rawTable[1][1])
 })
 
-Then('Two way data binding must have same value as name', function () {
-    homePage.get2WayDataBinding().should('have.value', this.data.name)
+Then('Two way data binding must have value {string}', function (name) {
+    homePage.get2WayDataBinding().should('have.value', name)
 })
 
 Then('Name should have minimum length of 2',  () => {
