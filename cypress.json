@@ -8,5 +8,6 @@
   "reporter": "mochawesome",
   "retries": {
     "runMode": 2
-  }
+  },
+  "testFiles": "**/*.feature"
 }
