@@ -42,3 +42,20 @@ When('Places the order', () => {
 Then('The order should be placed successfully', function () {
     cy.successAlertContainsText(this.data.successfulOrderMsg)
 })
+
+When('User fills the form', function () {
+    homePage.getName().type(this.data.name)
+    homePage.getGender().select(this.data.gender)
+})
+
+Then('Two way data binding must have same value as name', function () {
+    homePage.get2WayDataBinding().should('have.value', this.data.name)
+})
+
+Then('Name should have minimum length of 2',  () => {
+    homePage.getName().should('have.attr', 'minlength', '2')
+})
+
+Then('Entrepreneurship should be disabled', function () {
+    homePage.getEntrepreneur().should('be.disabled')
+})
