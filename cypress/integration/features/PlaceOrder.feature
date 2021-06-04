@@ -1,5 +1,6 @@
 Feature: Place Order
 
+  @Regression
   Scenario: User should be able to place an order
     Given User navigates to Home page
     When User selects to shop
@@ -10,7 +11,7 @@ Feature: Place Order
     And Places the order
     Then The order should be placed successfully
 
-
+  @Smoke
   Scenario: User should be able to fill the form
     Given User navigates to Home page
     When User fills the form
