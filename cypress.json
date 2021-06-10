@@ -9,5 +9,5 @@
   "retries": {
     "runMode": 2
   },
-  "testFiles": "**/*.feature"
+  "testFiles": ["**/*.feature", "**/*.js"]
 }
