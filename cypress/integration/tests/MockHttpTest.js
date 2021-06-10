@@ -8,7 +8,9 @@ describe('Mock request/response tests', function (){
             }).as('getBooks')
         cy.visit('/angularAppdemo')
         cy.get('.btn-primary').click()
-        cy.wait('@getBooks')
+        cy.wait('@getBooks').should(({request, response}) => {
+            cy.get('tbody tr th').should('have.length', response.body.length)
+        })
         cy.get('p').should('have.text', 'Sorry we have only one book available')
     });
 })
