@@ -9,5 +9,15 @@
   "retries": {
     "runMode": 2
   },
-  "testFiles": ["**/*.feature", "**/*.js"]
+  "testFiles": ["**/*.feature", "**/*.js"],
+  "db": {
+    "userName": "mysqluser",
+    "password": "Test@123456789",
+    "server": "https://65.0.26.174x",
+    "options": {
+      "database": "library",
+      "encrypt": true,
+      "rowCollectionOnRequestCompletion" : true
+    }
+  }
 }

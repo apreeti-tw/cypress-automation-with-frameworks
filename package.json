@@ -22,6 +22,7 @@
     "cypress": "^7.2.0",
     "cypress-cucumber-preprocessor": "^4.1.1",
     "cypress-iframe": "^1.0.1",
+    "cypress-sql-server": "^1.0.0",
     "mocha": "^8.4.0",
     "mochawesome": "^6.2.2"
   },

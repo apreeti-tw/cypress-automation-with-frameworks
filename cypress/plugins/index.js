@@ -16,8 +16,15 @@
  * @type {function(*=): function(*=): Promise<*>}
  */
 const cucumber = require('cypress-cucumber-preprocessor').default
+const sqlServer = require('cypress-sql-server')
+
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
     on('file:preprocessor', cucumber())
+}
+
+module.exports = (on, config) => {
+    tasks = sqlServer.loadDBPlugin(config.db);
+    on('task', tasks);
 }
