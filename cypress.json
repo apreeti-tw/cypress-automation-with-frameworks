@@ -11,9 +11,10 @@
   },
   "testFiles": ["**/*.feature", "**/*.js"],
   "db": {
-    "userName": "mysqluser",
-    "password": "Test@123456789",
-    "server": "https://65.0.26.174x",
+    "userName": "",
+    "password": "",
+    "server": "",
+    "port": 3306,
     "options": {
       "database": "library",
       "encrypt": true,
