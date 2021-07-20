@@ -4,5 +4,6 @@
   "gender": "Female",
   "productName": ["Blackberry", "iphone"],
   "country": "India",
-  "successfulOrderMsg": "Success! Thank you! Your order will be delivered in next few weeks :-)."
+  "successfulOrderMsg": "Success! Thank you! Your order will be delivered in next few weeks :-).",
+  "singleproduct": "Bose SoundLink Wireless Speaker"
 }
