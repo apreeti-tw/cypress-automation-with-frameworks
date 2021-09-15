@@ -17,11 +17,6 @@ describe('Buy a product', function (){
         cy.contains(example.singleproduct).click()
 
         //capture price in description and add product to cart
-        let price = '';
-        cy.get('#Description h2').then(($el) => {
-            price = $el.text().split('\n')[0].trim()
-            cy.log("Product price ---------> "+price)
-        })
         cy.get('button[name="save_to_cart"]').click()
 
         //go to cart
@@ -31,10 +26,6 @@ describe('Buy a product', function (){
         cy.get('#checkOutButton').click()
 
         //verify price and login to place order
-        cy.wait(5000) //wait for the cart mini window to close
-        cy.get('.roboto-bold.totalText.ng-binding span').then(($el) => {
-            expect($el.text()).to.eq(price)
-        })
         cy.get('[name="usernameInOrderPayment"]').type('testautomation')
         cy.get('[name="passwordInOrderPayment"]').type('Test@12345')
         cy.get('#login_btnundefined').click()
@@ -44,14 +35,15 @@ describe('Buy a product', function (){
 
         //click on pay now in payment method and verify message
         cy.get('[name="pay_now_btn_MasterCredit"]').click()
+
+        cy.get('#orderPaymentSuccess h2 span').should('be.visible')
         cy.get('#orderPaymentSuccess h2 span').should('have.text', 'Thank you for buying with Advantage')
 
         //log order details
-        cy.wait(1000)
         let orderNo = ''
-        cy.get('#orderNumberLabel').then(($el) => {
-            orderNo = $el.text()
+        cy.get('#orderNumberLabel').then((el) => {
+            orderNo = el.text()
+            cy.log("Order No. ---------> "+orderNo)
         })
-        cy.log("Order No. ---------> "+orderNo)
     })
 })
